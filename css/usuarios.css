@@ -1,0 +1,34 @@
+table{
+width:100%;
+border-collapse:collapse;
+background:#fff;
+margin-top:20px;
+box-shadow:0 3px 8px rgba(0,0,0,.1);
+}
+
+th{
+background:#2563eb;
+color:white;
+padding:12px;
+}
+
+td{
+padding:12px;
+text-align:center;
+border-bottom:1px solid #ddd;
+}
+
+.btn{
+padding:7px 12px;
+border-radius:5px;
+color:white;
+text-decoration:none;
+}
+
+.editar{
+background:#22c55e;
+}
+
+.eliminar{
+background:#ef4444;
+}

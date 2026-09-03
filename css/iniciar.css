@@ -1,0 +1,252 @@
+/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(180deg,#274d73,#1f4365,#1a3c5d);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:420px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.logo{
+    width:75px;
+    height:75px;
+    margin:auto;
+    border-radius:18px;
+    background:rgba(255,255,255,.12);
+    border:2px solid rgba(255,255,255,.2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:35px;
+    font-weight:bold;
+}
+
+h1{
+    font-size:58px;
+    text-align:center;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+h1 span{
+    color:#E7B93E;
+}
+
+.login-subtitle{
+    color:#d8e1ec;
+    text-align:center;
+    margin-bottom:35px;
+    font-size:18px;
+}
+
+.subtitulo{
+    text-align:center;
+    color:#d8dde4;
+    margin-bottom:35px;
+}
+
+.tabs{
+    display:flex;
+    background:rgba(255,255,255,.08);
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:30px;
+}
+
+.tabs button{
+    width:50%;
+    padding:14px;
+    border:none;
+    background:transparent;
+    color:#d6dce3;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.tabs .activo{
+    background:rgba(255,255,255,.15);
+    color:#fff;
+    font-weight:600;
+}
+
+label{
+    display:block;
+    color:white;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:8px;
+    letter-spacing:1px;
+}
+
+input{
+    width:100%;
+    height:52px;
+    border:none;
+    border-radius:12px;
+    padding:0 18px;
+    font-size:16px;
+    background:rgba(255,255,255,.12);
+    color:white;
+    border:1px solid rgba(255,255,255,.2);
+}
+
+input::placeholder{
+    color:#cfd8e3;
+}
+
+input:focus{
+    border-color:#d7ad3b;
+    box-shadow:0 0 15px rgba(215,173,59,.35);
+}
+
+.btn-login{
+    width:100%;
+    margin-top:35px;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:white;
+    color:#24486b;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-login:hover{
+    transform:translateY(-3px);
+    background:#d7ad3b;
+    color:white;
+}
+
+.texto{
+    text-align:center;
+    color:#d8dde4;
+    margin-top:25px;
+}
+
+.texto a{
+    color:#f0c44f;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.texto a:hover{
+    text-decoration:underline;
+}
+
+hr{
+    border:none;
+    border-top:1px solid rgba(255,255,255,.15);
+    margin:25px 0;
+}
+
+.redes{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.redes a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    transition:.3s;
+}
+
+.redes a:hover{
+    background:#d7ad3b;
+    transform:scale(1.1);
+}
+
+.btn{
+    width:100%;
+    height:55px;
+    margin-top:25px;
+    border:none;
+    border-radius:14px;
+    background:white;
+    color:#24486b;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#E7B93E;
+    color:white;
+}
+
+.password{
+    position:relative;
+}
+
+.show-password{
+    position:absolute;
+    right:15px;
+    top:42px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    color:white;
+    font-size:18px;
+}
+
+.remember-me{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:20px 0;
+}
+
+.remember-me input{
+    width:18px;
+    height:18px;
+}
+
+.login-container{
+    width:420px;
+    padding:45px;
+    border-radius:22px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    box-shadow:0 15px 40px rgba(0,0,0,.30);
+}
+
+.form-group label{
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
