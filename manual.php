@@ -268,7 +268,7 @@
           <span class="eyebrow accent">Documento oficial</span>
           <h2>Consulta la guía completa</h2>
         </div>
-        <a href="https://www.ups.edu.ec/sites/default/files/2021-09/manual-de-convivencia-2021.pdf" target="_blank" rel="noopener" class="btn btn-primary">Descargar manual</a>
+        <a href="PDF/MANUAL 2026 v1.pdf" target="_blank" rel="noopener" class="btn btn-primary">Descargar manual</a>
       </div>
     </section>
   </main>
