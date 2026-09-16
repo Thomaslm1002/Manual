@@ -1,9 +1,14 @@
-﻿<!DOCTYPE html>
+﻿<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>COESCON — Consejo Estud</title>
+  <title>COESCON — Comité Escolar de Convivencia</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Pirata+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -41,16 +46,40 @@
           <span>COESCON</span>
         </a>
         <ul class="nav-links">
-          <li><a href="index.php" class="nav-home">Inicio</a></li>
-          <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-          <li><a href="manual.html">Manual</a></li>
-          <li><a href="historia.html">Historia</a></li>
-          <li><a href="actividades.html">Actividades</a></li>
-          <li><a href="equipo.html">Equipo</a></li>
-          <li><a href="contacto.php" class="">Contáctanos</a></li>
-          <li><a href="registrar.php" class="">Registrar</a></li>
-          <li><a href="iniciar.php" class="nav">Iniciar Sesión</a></li>
-        </ul>
+
+    <li><a href="index.php">Inicio</a></li>
+    <li><a href="manual.php">Manual</a></li>
+    <li><a href="quienes-somos.php">Quiénes Somos</a></li>
+    <li><a href="actividades.php">Actividades</a></li>
+    <li><a href="equipo.php">Equipo</a></li>
+    <li><a href="contacto.php">Contáctanos</a></li>
+
+    <?php if (!empty($_SESSION['correo'])): ?>
+      
+        <li>
+          <a href="perfil.php"><?php echo htmlspecialchars($_SESSION['usuario'] ?? '[VACIO]'); ?></a>
+        </li>
+
+        <li>
+            <a href="PHP/cerrar_sesion.php">Cerrar Sesión</a>
+        </li>
+
+    <?php else: ?>
+
+        <li>
+            <a href="registrar.php">Registro</a>
+        </li>
+
+        <li>
+            <a href="Iniciar.php">Iniciar Sesión</a>
+        </li>
+
+    <?php endif; ?>
+
+</nav>
+
+<nav>
+</ul>
         <button id="hamburger" class="hamburger" aria-label="Abrir menú" onclick="toggleMenu()">
           <span></span><span></span><span></span>
         </button>
@@ -64,7 +93,7 @@
         <a href="contacto.php" onclick="closeMobileMenu()">Contáctanos</a>
       </div>
     </header>
-
+</nav>
     <main>
       <section class="hero">
         <div class="container hero-content reveal">
@@ -163,10 +192,10 @@
         <div class="footer-col">
           <h4>Acceso rápido</h4>
           <ul>
-            <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-            <li><a href="historia.html">Historia</a></li>
-            <li><a href="actividades.html">Actividades</a></li>
-            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="quienes-somos.php">Quiénes Somos</a></li>
+            <li><a href="manual.php">Manual</a></li>
+            <li><a href="actividades.php">Actividades</a></li>
+            <li><a href="equipo.php">Equipo</a></li>
             <li><a href="contacto.php">Contáctanos</a></li>
           </ul>
         </div>

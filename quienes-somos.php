@@ -1,3 +1,9 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <!-- Página de identidad y propósito del Consejo Estudiantil COESCON. -->
 <html lang="es">
@@ -32,36 +38,64 @@
   </div>
 </div>
 
-<div id="main-site" class="visible">
-  <!-- Navegación principal y estructura general de la página. -->
-  <nav id="navbar">
-    <a href="index.php" class="nav-logo">
-      <div class="emblem">CO</div>
-      <span>COESCON</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.php" class="nav-home">Inicio</a></li>
-      <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-      <li><a href="historia.html">Historia</a></li>
-      <li><a href="actividades.html">Actividades</a></li>
-      <li><a href="equipo.html">Equipo</a></li>
-      <li><a href="contacto.php">Contáctanos</a></li>
-      <li><a href="registrar.php">Registrar</a></li>
-      <li><a href="iniciar.php">Iniciar Sesión</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="index.html" onclick="closeMobileMenu()">Inicio</a>
-    <a href="quienes-somos.html" onclick="closeMobileMenu()">Quiénes Somos</a>
-    <a href="historia.html" onclick="closeMobileMenu()">Historia</a>
-    <a href="actividades.html" onclick="closeMobileMenu()">Actividades</a>
-    <a href="equipo.html" onclick="closeMobileMenu()">Equipo</a>
-    <a href="contacto.html" onclick="closeMobileMenu()">Contáctanos</a>
-  </div>
+  <div id="main-site">
+    <header id="navbar" class="site-header">
+      <div class="container header-inner">
+        <a href="index.php" class="nav-logo">
+          <div class="emblem">CO</div>
+          <span>COESCON</span>
+        </a>
+        <ul class="nav-links">
 
+    <li><a href="index.php">Inicio</a></li>
+    <li><a href="manual.php">Manual</a></li>
+    <li><a href="quienes-somos.php">Quiénes Somos</a></li>
+    <li><a href="actividades.php">Actividades</a></li>
+    <li><a href="equipo.php">Equipo</a></li>
+    <li><a href="contacto.php">Contáctanos</a></li>
+
+        <?php if (!empty($_SESSION['correo'])): ?>
+
+        <li>
+            <a href="perfil.php">
+                <?php echo htmlspecialchars($_SESSION['usuario']); ?>
+            </a>
+        </li>
+
+        <li>
+            <a href="PHP/cerrar_sesion.php">Cerrar Sesión</a>
+        </li>
+
+    <?php else: ?>
+
+        <li>
+            <a href="registrar.php">Registro</a>
+        </li>
+
+        <li>
+            <a href="Iniciar.php">Iniciar Sesión</a>
+        </li>
+
+    <?php endif; ?>
+
+</nav>
+
+<nav>
+</ul>
+        <button id="hamburger" class="hamburger" aria-label="Abrir menú" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div id="mobile-menu" class="mobile-menu">
+        <a href="#hero" onclick="closeMobileMenu()">Inicio</a>
+        <a href="quienes-somos.html" onclick="closeMobileMenu()">Quiénes Somos</a>
+        <a href="historia.html" onclick="closeMobileMenu()">Historia</a>
+        <a href="actividades.html" onclick="closeMobileMenu()">Actividades</a>
+        <a href="equipo.html" onclick="closeMobileMenu()">Equipo</a>
+        <a href="contacto.php" onclick="closeMobileMenu()">Contáctanos</a>
+      </div>
+    </header>
+</nav>
   <!-- Sección de identidad, misión y valores del Consejo Estudiantil. -->
   <section id="quienes" class="quienes-pirate">
     <div class="container">
@@ -78,19 +112,19 @@
           <span class="corner-ornament bl">✦</span>
           <span class="corner-ornament br">✦</span>
           <div class="letter-header">
-            <div class="letter-title">Institución Educativa Nuestra Señora del Mar Azul</div>
+            <div class="letter-title">Institución Educativa Gilberto Alzate Avendaño</div>
             <div class="letter-subtitle">— Carta de Identidad Institucional —</div>
           </div>
-          <div class="letter-date">A los estudiantes, familias y pueblo en general — Año de Gracia 2024</div>
+          <div class="letter-date">EL ALZATE VIVE POR VOS</div>
           <div class="letter-body">
-            <p class="drop-cap">Que sepa todo aquel que lea este pergamino que somos una comunidad educativa forjada en el honor, la virtud y la búsqueda incansable del saber. Desde los confines de 1979, izamos nuestra bandera con orgullo y navegamos las aguas del conocimiento con valentía.</p>
-            <p>Somos más de 1.200 almas valientes —estudiantes, maestros, familias— unidos por un propósito sagrado: cultivar mentes brillantes y corazones nobles. Como toda tripulación que se respete, tenemos un código de honor inquebrantable, una brújula que apunta siempre hacia la excelencia y un ancla que nos une a nuestras raíces.</p>
-            <p>Nuestros colores, el azul profundo del océano y el dorado del sol naciente, representan la profundidad del conocimiento y el resplandor de quienes lo alcanzan. No tememos las tormentas del tiempo, pues estamos construidos sobre cimientos sólidos de valores, ética y amor por Colombia.</p>
-            <p>Cada graduado que cruza nuestras puertas lleva consigo el sello de esta casa: honestidad, excelencia, servicio y gratitud. ¡Así navegan los nuestros hacia sus propios horizontes!</p>
+            <p class="drop-cap">ManualitOnline es un proyecto desarrollado para facilitar el acceso y la comprensión del Manual de Convivencia de la Institución Educativa Gilberto Álzate Avendaño.</p>
+            <p>SNuestra plataforma busca ofrecer un espacio digital sencillo, organizado e interactivo, donde estudiantes y docentes puedan consultar información importante de manera rápida y fácil.</p>
+            <p>También contamos con un espacio dedicado a COESCON, donde se pueden conocer sus actividades, novedades y recibir sugerencias de los estudiantes para mejorar la convivencia escolar.</p>
+            <p>Nuestro propósito es fortalecer la comunicación entre la comunidad educativa y promover el conocimiento, la participación y el cumplimiento de las normas de convivencia.</p>
           </div>
           <div class="letter-signature">
-            <div class="sig-name">Hermana Leonor Castaño · Rectora Fundadora</div>
-            <div class="sig-title">In Scientia Et Virtute ✦ 1979</div>
+            <div class="sig-name">Humberto Bermudez Cardona · Rector </div>
+            <div class="sig-title">Insitución Educativa Gilberto Alzate Avendaño ✦ 1962</div>
           </div>
         </div>
       </div>
@@ -106,10 +140,11 @@
       <div class="footer-col">
         <h4>Navegación</h4>
         <ul>
-          <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-          <li><a href="historia.html">Historia</a></li>
-          <li><a href="actividades.html">Actividades</a></li>
-          <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="manual.php">Manual</a></li>
+            <li><a href="actividades.php">Actividades</a></li>
+            <li><a href="equipo.php">Equipo</a></li>
+            <li><a href="contacto.php">Contáctanos</a></li>
         </ul>
       </div>
       <div class="footer-col">

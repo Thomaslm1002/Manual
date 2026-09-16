@@ -1,51 +1,57 @@
 <?php
-// Inicia la sesión
 session_start();
 
-// Conexión a la base de datos
 include 'conexion.php';
 
-// Verifica que el formulario fue enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $correo = $_POST['correo'];
     $clave = $_POST['Clave'];
 
-    // Buscar el usuario por su correo
-    $sql = "SELECT * FROM registrar WHERE correo = '$correo'";
-    $resultado = mysqli_query($conexion, $sql);
+    $sql = "SELECT * FROM registrar WHERE correo = ?";
+    $stmt = mysqli_prepare($conexion, $sql);
+
+    mysqli_stmt_bind_param($stmt, "s", $correo);
+    mysqli_stmt_execute($stmt);
+
+    $resultado = mysqli_stmt_get_result($stmt);
 
     if (mysqli_num_rows($resultado) > 0) {
 
         $fila = mysqli_fetch_assoc($resultado);
+        // Comprobar contraseña
+        if (password_verify($clave, $fila['Clave'])) {
 
-        // Verificar la contraseña
-        if ($clave == $fila['Clave']) {
-
-            // Guardar datos de la sesión
+            // Crear sesión
             $_SESSION['id'] = $fila['id'];
-            $_SESSION['nombre'] = $fila['nombre'];
+            $_SESSION['usuario'] = $fila['Nombre'];
             $_SESSION['correo'] = $fila['correo'];
             $_SESSION['tipo'] = $fila['TipoCuenta'];
-
-            // Redireccionar según el rol guardado en la base de datos
-            if ($fila['TipoCuenta'] == 'administrador') {
+            // Redireccionar
+            if ($fila['TipoCuenta'] === 'administrador') {
                 header("Location: dashboard.php");
+                exit();
             } else {
                 header("Location: index.php");
+                exit();
             }
-            exit();
 
-        } else {
-            echo "Contraseña incorrecta.";
+            } else {
+
+                echo "Contraseña incorrecta.";
+
         }
 
     } else {
+
         echo "Usuario no encontrado.";
+
     }
 
+    mysqli_stmt_close($stmt);
     mysqli_close($conexion);
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

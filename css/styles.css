@@ -1,3 +1,4 @@
+/* ===== VARIABLES ===== */
 :root {
   --blue-900: #042C53;
   --blue-800: #0C447C;
@@ -49,8 +50,17 @@ body {
   box-shadow: 0 4px 20px rgba(24,95,165,0.4);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-#a11y-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(24,95,165,0.5); }
-#a11y-btn svg { width: 26px; height: 26px; fill: white; }
+
+#a11y-btn:hover { 
+  transform: scale(1.1); 
+  box-shadow: 0 6px 28px rgba(24,95,165,0.5);
+  }
+
+#a11y-btn svg {
+  width: 26px; 
+  height: 26px; 
+  fill: white; 
+  }
 
 #a11y-panel {
   position: fixed;
@@ -1063,4 +1073,9 @@ footer { background: var(--blue-900); color: white; padding: 4rem 2rem 2rem; }
   .timeline-card p {
     font-size: 0.95rem;
   }
+}
+
+.nav-links a[href="perfil.php"] {
+    color: blue !important;
+    font-weight: 600;
 }

@@ -1,3 +1,9 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <!-- Página del equipo que representa y acompaña la labor del consejo. -->
 <html lang="es">
@@ -32,36 +38,62 @@
   </div>
 </div>
 
-<div id="main-site" class="visible">
-  <!-- Navegación principal y estructura general de la página. -->
-  <nav id="navbar">
-    <a href="index.php" class="nav-logo">
-      <div class="emblem">CO</div>
-      <span>COESCON</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.php" class="nav-home">Inicio</a></li>
-      <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-      <li><a href="historia.html">Historia</a></li>
-      <li><a href="actividades.html">Actividades</a></li>
-      <li><a href="equipo.html">Equipo</a></li>
-      <li><a href="contacto.php">Contáctanos</a></li>
-      <li><a href="registrar.php">Registrar</a></li>
-      <li><a href="iniciar.php">Iniciar Sesión</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="index.php" onclick="closeMobileMenu()">Inicio</a>
-    <a href="quienes-somos.html" onclick="closeMobileMenu()">Quiénes Somos</a>
-    <a href="historia.html" onclick="closeMobileMenu()">Historia</a>
-    <a href="actividades.html" onclick="closeMobileMenu()">Actividades</a>
-    <a href="equipo.html" onclick="closeMobileMenu()">Equipo</a>
-    <a href="contacto.php" onclick="closeMobileMenu()">Contáctanos</a>
-  </div>
+<div id="main-site">
+    <header id="navbar" class="site-header">
+      <div class="container header-inner">
+        <a href="index.php" class="nav-logo">
+          <div class="emblem">CO</div>
+          <span>COESCON</span>
+        </a>
+        <ul class="nav-links">
 
+    <li><a href="index.php">Inicio</a></li>
+    <li><a href="manual.php">Manual</a></li>
+    <li><a href="quienes-somos.php">Quiénes Somos</a></li>
+    <li><a href="actividades.php">Actividades</a></li>
+    <li><a href="equipo.php">Equipo</a></li>
+    <li><a href="contacto.php">Contáctanos</a></li>
+
+        <?php if (!empty($_SESSION['correo'])): ?>
+
+        <li>
+            <a href="perfil.php">
+                <?php echo htmlspecialchars($_SESSION['usuario']); ?>
+            </a>
+        </li>
+
+        <li>
+            <a href="PHP/cerrar_sesion.php">Cerrar Sesión</a>
+        </li>
+
+    <?php else: ?>
+
+        <li>
+            <a href="registrar.php">Registro</a>
+        </li>
+
+        <li>
+            <a href="Iniciar.php">Iniciar Sesión</a>
+        </li>
+
+    <?php endif; ?>
+</nav>
+<nav>
+</ul>
+        <button id="hamburger" class="hamburger" aria-label="Abrir menú" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div id="mobile-menu" class="mobile-menu">
+        <a href="#hero" onclick="closeMobileMenu()">Inicio</a>
+        <a href="quienes-somos.html" onclick="closeMobileMenu()">Quiénes Somos</a>
+        <a href="historia.html" onclick="closeMobileMenu()">Historia</a>
+        <a href="actividades.html" onclick="closeMobileMenu()">Actividades</a>
+        <a href="equipo.html" onclick="closeMobileMenu()">Equipo</a>
+        <a href="contacto.php" onclick="closeMobileMenu()">Contáctanos</a>
+      </div>
+    </header>
+</nav>
   <!-- Sección del equipo que representa al Consejo Estudiantil. -->
   <section id="equipo">
     <div class="container">
@@ -150,10 +182,11 @@
       <div class="footer-col">
         <h4>Navegación</h4>
         <ul>
-          <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-          <li><a href="historia.html">Historia</a></li>
-          <li><a href="actividades.html">Actividades</a></li>
-          <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="quienes-somos.php">Quiénes Somos</a></li>
+            <li><a href="manual.php">Manual</a></li>
+            <li><a href="actividades.php">Actividades</a></li>
+            <li><a href="equipo.php">Equipo</a></li>
+            <li><a href="contacto.php">Contáctanos</a></li>
         </ul>
       </div>
       <div class="footer-col">

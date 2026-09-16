@@ -1,4 +1,4 @@
-    root {
+        root {
     --bg: #f4f7fb;
     --surface: #ffffff;
     --surface-muted: #edf3fb;
@@ -54,7 +54,7 @@
     background: rgba(244, 247, 251, 0.82);
     border-bottom: 1px solid var(--line);
     }
-
+    /*
     .nav-wrap {
     display: flex;
     align-items: center;
@@ -62,7 +62,7 @@
     min-height: 78px;
     gap: 1rem;
     }
-
+    /*
     .brand {
     display: inline-flex;
     align-items: center;
@@ -138,7 +138,7 @@
     .nav-toggle.open span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
     }
-
+    */
     .hero {
     position: relative;
     padding: 5.5rem 0 4rem;
@@ -603,7 +603,7 @@
     .faq-wrap {
         grid-template-columns: 1fr;
     }
-
+    /*
     .main-nav {
         position: absolute;
         top: calc(100% + 0.5rem);
@@ -627,7 +627,7 @@
         display: block;
     }
     }
-
+    */
     @media (max-width: 680px) {
     .feature-grid,
     .rules-grid,
@@ -655,4 +655,31 @@
         padding: 1.5rem;
     }
     }
+    
+    .calendar-section {
+    padding: 80px 6%;
+    background: #f5f7fa;
+}
 
+.calendar-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.calendar-container {
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.calendar-container iframe {
+    display: block;
+    width: 100%;
+    min-height: 600px;
+    border: 0;
+}
+    }
