@@ -1,3 +1,8 @@
+<?php
+// Iniciar la sesión para almacenar la información del usuario
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,36 +39,64 @@
   </div>
 </div>
 
-<div id="main-site" class="visible">
-  <nav id="navbar">
-    <a href="index.php" class="nav-logo">
-      <div class="emblem">CO</div>
-      <span>COESCON</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.php" class="nav-home">Inicio</a></li>
-      <li><a href="quienes-somos.php">Quiénes Somos</a></li>
-      <li><a href="Manual.html" class="active">Manual</a></li>
-      <li><a href="Historia.html">Historia</a></li>
-      <li><a href="actividades.php">Actividades</a></li>
-      <li><a href="equipo.html">Equipo</a></li>
-      <li><a href="contacto.php">Contáctanos</a></li>
-      <li><a href="registrar.php">Registrar</a></li>
-      <li><a href="iniciar.php">Iniciar Sesión</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="index.php" onclick="closeMobileMenu()">Inicio</a>
-    <a href="quienes-somos.php" onclick="closeMobileMenu()">Quiénes Somos</a>
-    <a href="Manual.html" onclick="closeMobileMenu()">Manual</a>
-    <a href="Historia.html" onclick="closeMobileMenu()">Historia</a>
-    <a href="actividades.php" onclick="closeMobileMenu()">Actividades</a>
-    <a href="equipo.html" onclick="closeMobileMenu()">Equipo</a>
-    <a href="contacto.php" onclick="closeMobileMenu()">Contáctanos</a>
-  </div>
+  <div id="main-site">
+    <header id="navbar" class="site-header">
+      <div class="container header-inner">
+        <a href="index.php" class="nav-logo">
+          <div class="emblem">CO</div>
+          <span>COESCON</span>
+        </a>
+        <ul class="nav-links">
+
+    <li><a href="index.php">Inicio</a></li>
+    <li><a href="manual.php">Manual</a></li>
+    <li><a href="quienes-somos.php">Quiénes Somos</a></li>
+    <li><a href="actividades.php">Actividades</a></li>
+    <li><a href="equipo.php">Equipo</a></li>
+    <li><a href="contacto.php">Contáctanos</a></li>
+
+        <?php if (!empty($_SESSION['correo'])): ?>
+
+        <li>
+            <a href="perfil.php">
+                <?php echo htmlspecialchars($_SESSION['usuario']); ?>
+            </a>
+        </li>
+
+        <li>
+            <a href="PHP/cerrar_sesion.php">Cerrar Sesión</a>
+        </li>
+
+    <?php else: ?>
+
+        <li>
+            <a href="registrar.php">Registro</a>
+        </li>
+
+        <li>
+            <a href="Iniciar.php">Iniciar Sesión</a>
+        </li>
+
+    <?php endif; ?>
+
+</nav>
+
+<nav>
+</ul>
+        <button id="hamburger" class="hamburger" aria-label="Abrir menú" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div id="mobile-menu" class="mobile-menu">
+        <a href="#hero" onclick="closeMobileMenu()">Inicio</a>
+        <a href="quienes-somos.html" onclick="closeMobileMenu()">Quiénes Somos</a>
+        <a href="historia.html" onclick="closeMobileMenu()">Historia</a>
+        <a href="actividades.html" onclick="closeMobileMenu()">Actividades</a>
+        <a href="equipo.html" onclick="closeMobileMenu()">Equipo</a>
+        <a href="contacto.php" onclick="closeMobileMenu()">Contáctanos</a>
+      </div>
+    </header>
+</nav>
 
   <main>
     <section class="hero">
@@ -237,7 +270,7 @@
               ¿Qué es la convivencia escolar?
             </button>
             <div class="faq-answer">
-              <p>Es el conjunto de relaciones entre las personas de la comunidad educativa, basado en el respeto, la responsabilidad y la participación democrática.</p>
+              <p> es el conjunto de relaciones humanas, interacciones y dinámicas que se establecen entre todos los miembros de una comunidad educativa, como estudiantes, docentes, directivos y familias.</p>
             </div>
           </div>
 
@@ -246,7 +279,7 @@
               ¿Qué hacer si alguien agrede o discrimina a otra persona?
             </button>
             <div class="faq-answer">
-              <p>Es importante denunciarlo por los canales institucionales, guardar la evidencia y buscar apoyo inmediato de autoridades o personal de orientación.</p>
+              <p>Si eres testigo o víctima de una agresión o discriminación, debes priorizar la seguridad física alejándote del peligro, documentar el hecho tomando fotos, videos o datos de testigos, y denunciar formalmente ante la Fiscalía General de la Nación, la Policía Nacional o acudir a la Defensoría del Pueblo para recibir asesoría legal gratuita.</p>
             </div>
           </div>
 
@@ -282,10 +315,11 @@
       <div class="footer-col">
         <h4>Navegación</h4>
         <ul>
-          <li><a href="quienes-somos.php">Quiénes Somos</a></li>
-          <li><a href="Historia.html">Historia</a></li>
-          <li><a href="actividades.php">Actividades</a></li>
-          <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="quienes-somos.php">Quienes Somos</a></li>
+            <li><a href="actividades.php">Actividades</a></li>
+            <li><a href="equipo.php">Equipo</a></li>
+            <li><a href="contacto.php">Contáctanos</a></li>
         </ul>
       </div>
       <div class="footer-col">
