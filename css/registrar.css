@@ -1,5 +1,7 @@
+/* Importa la fuente Poppins desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Configuración general de todos los elementos */
 *{
     margin:0;
     padding:0;
@@ -7,6 +9,7 @@
     font-family:'Poppins',sans-serif;
 }
 
+/* Estilos generales del cuerpo de la página */
 body{
     min-height:100vh;
     display:flex;
@@ -16,6 +19,7 @@ body{
     padding:30px;
 }
 
+/* Contenedor principal del formulario de registro */
 .register-container{
     width:450px;
     background:rgba(255,255,255,.05);
@@ -25,6 +29,7 @@ body{
     box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 
+/* Título principal del formulario de registro */
 .register-container h2{
     text-align:center;
     color:#fff;
@@ -32,6 +37,7 @@ body{
     margin-bottom:8px;
 }
 
+/* Subtítulo del formulario de registro */
 .register-subtitle{
     text-align:center;
     color:#d7e2ee;
@@ -39,10 +45,12 @@ body{
     font-size:16px;
 }
 
+/* Contenedor de cada campo del formulario */
 .form-group{
     margin-bottom:18px;
 }
 
+/* Etiquetas de los campos del formulario */
 .form-group label{
     display:block;
     color:#fff;
@@ -51,6 +59,7 @@ body{
     font-weight:600;
 }
 
+/* Campos de texto y listas desplegables del formulario */
 .form-group input,
 .form-group select{
     width:100%;
@@ -65,44 +74,53 @@ body{
     transition:.3s;
 }
 
+/* Texto de ejemplo que aparece dentro de los campos */
 .form-group input::placeholder{
     color:#d5dce4;
 }
 
+/* Lista desplegable del formulario */
 .form-group select{
     cursor:pointer;
 }
 
+/* Opciones disponibles dentro de la lista desplegable */
 .form-group select option{
     color:#000;
 }
 
+/* Efecto de los campos cuando están seleccionados */
 .form-group input:focus,
 .form-group select:focus{
     border-color:#e5b93e;
     box-shadow:0 0 10px rgba(229,185,62,.35);
 }
 
+/* Fila utilizada para organizar varios campos horizontalmente */
 .form-row{
     display:flex;
     gap:15px;
 }
 
+/* Distribución de los grupos de campos dentro de una fila */
 .form-row .form-group{
     flex:1;
 }
 
+/* Campo destinado a la clave de administrador */
 .admin-key-group{
     display:none;
     margin-bottom:20px;
 }
 
+/* Mensaje mostrado cuando existe un error en el formulario */
 .error-message{
     color:#ffb7b7;
     font-size:13px;
     margin-top:6px;
 }
 
+/* Botón principal del formulario */
 .btn{
     width:100%;
     height:55px;
@@ -116,18 +134,21 @@ body{
     transition:.3s;
 }
 
+/* Efecto del botón cuando el cursor pasa sobre él */
 .btn:hover{
     background:#e5b93e;
     color:#fff;
     transform:translateY(-2px);
 }
 
+/* Contenedor de la línea divisoria */
 .divider{
     text-align:center;
     margin:28px 0 18px;
     position:relative;
 }
 
+/* Línea izquierda de la división */
 .divider::before{
     content:"";
     position:absolute;
@@ -138,6 +159,7 @@ body{
     background:rgba(255,255,255,.25);
 }
 
+/* Línea derecha de la división */
 .divider::after{
     content:"";
     position:absolute;
@@ -148,6 +170,7 @@ body{
     background:rgba(255,255,255,.25);
 }
 
+/* Texto ubicado en el centro de la división */
 .divider span{
     color:#d7e2ee;
     font-size:14px;
@@ -155,10 +178,12 @@ body{
     padding:0 10px;
 }
 
+/* Contenedor del enlace para iniciar sesión */
 .login-link{
     text-align:center;
 }
 
+/* Enlace para acceder a la página de inicio de sesión */
 .login-link a{
     color:#e5b93e;
     text-decoration:none;
@@ -166,20 +191,25 @@ body{
     transition:.3s;
 }
 
+/* Efecto del enlace al pasar el cursor */
 .login-link a:hover{
     color:#fff;
 }
 
+/* Adaptación del formulario para pantallas pequeñas */
 @media(max-width:500px){
 
+    /* Ajusta el contenedor al ancho disponible en móviles */
     .register-container{
         width:100%;
         padding:30px 20px;
     }
 
+    /* Cambia la fila de campos a una disposición vertical */
     .form-row{
         flex-direction:column;
         gap:0;
     }
 
 }
+

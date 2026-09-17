@@ -1,6 +1,7 @@
-/* Fuente */
+/* Fuente Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Configuración general de todos los elementos */
 *{
     margin:0;
     padding:0;
@@ -8,6 +9,7 @@
     font-family:'Poppins',sans-serif;
 }
 
+/* Estilos generales del cuerpo de la página */
 body{
     background:linear-gradient(180deg,#274d73,#1f4365,#1a3c5d);
     display:flex;
@@ -16,6 +18,7 @@ body{
     min-height:100vh;
 }
 
+/* Contenedor principal del formulario */
 .container{
     width:420px;
     background:rgba(255,255,255,.05);
@@ -25,6 +28,7 @@ body{
     box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
+/* Contenedor y diseño del logo */
 .logo{
     width:75px;
     height:75px;
@@ -40,6 +44,7 @@ body{
     font-weight:bold;
 }
 
+/* Título principal de la página */
 h1{
     font-size:58px;
     text-align:center;
@@ -47,10 +52,12 @@ h1{
     margin-bottom:10px;
 }
 
+/* Parte destacada del título */
 h1 span{
     color:#E7B93E;
 }
 
+/* Subtítulo de la sección de inicio de sesión */
 .login-subtitle{
     color:#d8e1ec;
     text-align:center;
@@ -58,12 +65,14 @@ h1 span{
     font-size:18px;
 }
 
+/* Subtítulos generales */
 .subtitulo{
     text-align:center;
     color:#d8dde4;
     margin-bottom:35px;
 }
 
+/* Contenedor de las pestañas */
 .tabs{
     display:flex;
     background:rgba(255,255,255,.08);
@@ -72,6 +81,7 @@ h1 span{
     margin-bottom:30px;
 }
 
+/* Botones de las pestañas */
 .tabs button{
     width:50%;
     padding:14px;
@@ -83,12 +93,14 @@ h1 span{
     transition:.3s;
 }
 
+/* Pestaña que se encuentra activa */
 .tabs .activo{
     background:rgba(255,255,255,.15);
     color:#fff;
     font-weight:600;
 }
 
+/* Etiquetas de los campos del formulario */
 label{
     display:block;
     color:white;
@@ -98,6 +110,7 @@ label{
     letter-spacing:1px;
 }
 
+/* Campos de entrada del formulario */
 input{
     width:100%;
     height:52px;
@@ -110,15 +123,18 @@ input{
     border:1px solid rgba(255,255,255,.2);
 }
 
+/* Texto de ejemplo dentro de los campos */
 input::placeholder{
     color:#cfd8e3;
 }
 
+/* Apariencia de los campos cuando están seleccionados */
 input:focus{
     border-color:#d7ad3b;
     box-shadow:0 0 15px rgba(215,173,59,.35);
 }
 
+/* Botón principal de inicio de sesión */
 .btn-login{
     width:100%;
     margin-top:35px;
@@ -133,40 +149,47 @@ input:focus{
     transition:.3s;
 }
 
+/* Efecto del botón de inicio de sesión al pasar el cursor */
 .btn-login:hover{
     transform:translateY(-3px);
     background:#d7ad3b;
     color:white;
 }
 
+/* Texto informativo debajo del formulario */
 .texto{
     text-align:center;
     color:#d8dde4;
     margin-top:25px;
 }
 
+/* Enlaces dentro del texto informativo */
 .texto a{
     color:#f0c44f;
     text-decoration:none;
     font-weight:600;
 }
 
+/* Efecto de los enlaces al pasar el cursor */
 .texto a:hover{
     text-decoration:underline;
 }
 
+/* Línea horizontal separadora */
 hr{
     border:none;
     border-top:1px solid rgba(255,255,255,.15);
     margin:25px 0;
 }
 
+/* Contenedor de los enlaces de redes sociales */
 .redes{
     display:flex;
     justify-content:center;
     gap:20px;
 }
 
+/* Botones de las redes sociales */
 .redes a{
     width:45px;
     height:45px;
@@ -181,11 +204,13 @@ hr{
     transition:.3s;
 }
 
+/* Efecto de los botones de redes sociales al pasar el cursor */
 .redes a:hover{
     background:#d7ad3b;
     transform:scale(1.1);
 }
 
+/* Estilo general de los botones */
 .btn{
     width:100%;
     height:55px;
@@ -200,15 +225,18 @@ hr{
     transition:.3s;
 }
 
+/* Efecto de los botones al pasar el cursor */
 .btn:hover{
     background:#E7B93E;
     color:white;
 }
 
+/* Contenedor del campo de contraseña */
 .password{
     position:relative;
 }
 
+/* Botón para mostrar u ocultar la contraseña */
 .show-password{
     position:absolute;
     right:15px;
@@ -220,6 +248,7 @@ hr{
     font-size:18px;
 }
 
+/* Contenedor de la opción para recordar la sesión */
 .remember-me{
     display:flex;
     align-items:center;
@@ -227,11 +256,13 @@ hr{
     margin:20px 0;
 }
 
+/* Checkbox de la opción "Recordarme" */
 .remember-me input{
     width:18px;
     height:18px;
 }
 
+/* Contenedor específico del formulario de inicio de sesión */
 .login-container{
     width:420px;
     padding:45px;
@@ -241,6 +272,7 @@ hr{
     box-shadow:0 15px 40px rgba(0,0,0,.30);
 }
 
+/* Etiquetas de los grupos del formulario */
 .form-group label{
     display: block;
     color: #ffffff;
@@ -250,3 +282,4 @@ hr{
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
