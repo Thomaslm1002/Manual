@@ -1,3 +1,4 @@
+/* Configuración general de todos los elementos */
 *{
     margin:0;
     padding:0;
@@ -5,16 +6,17 @@
     font-family:'Poppins',sans-serif;
 }
 
+/* Estilos generales del cuerpo de la página */
 body{
     background:#f4f6f9;
 }
 
+/* Contenedor principal que organiza el contenido */
 .container{
     display:flex;
 }
 
-/* SIDEBAR */
-
+/* Barra lateral de navegación */
 .sidebar{
     width:230px;
     background:#1f2937;
@@ -22,6 +24,7 @@ body{
     color:white;
 }
 
+/* Logo o nombre ubicado en la barra lateral */
 .logo{
     text-align:center;
     padding:25px;
@@ -30,32 +33,34 @@ body{
     border-bottom:1px solid rgba(255,255,255,.1);
 }
 
+/* Lista de opciones de la barra lateral */
 .sidebar ul{
     list-style:none;
 }
 
+/* Elementos de la lista de navegación */
 .sidebar ul li{
     padding:18px 25px;
     transition:.3s;
 }
 
+/* Efecto al pasar el cursor sobre una opción */
 .sidebar ul li:hover{
     background:#2563eb;
     cursor:pointer;
 }
 
+/* Iconos de las opciones de navegación */
 .sidebar ul li i{
     margin-right:10px;
 }
 
-/* MAIN */
-
+/* Contenedor principal del contenido */
 .main{
     flex:1;
 }
 
-/* NAVBAR */
-
+/* Barra de navegación superior */
 .navbar{
     background:white;
     height:70px;
@@ -66,16 +71,17 @@ body{
     box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
 
+/* Nombre o información del usuario */
 .user{
     font-weight:600;
 }
 
-/* CONTENIDO */
-
+/* Área principal donde se muestra el contenido */
 .content{
     padding:30px;
 }
 
+/* Contenedor de las tarjetas informativas */
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -83,6 +89,7 @@ body{
     margin-top:25px;
 }
 
+/* Tarjetas individuales del panel */
 .card{
     background:white;
     padding:25px;
@@ -91,54 +98,62 @@ body{
     transition:.3s;
 }
 
+/* Efecto de elevación al pasar el cursor sobre una tarjeta */
 .card:hover{
     transform:translateY(-5px);
 }
 
+/* Iconos dentro de las tarjetas */
 .card i{
     font-size:35px;
     color:#2563eb;
     margin-bottom:15px;
 }
 
+/* Títulos principales de las tarjetas */
 .card h2{
     font-size:30px;
 }
 
+/* Texto descriptivo de las tarjetas */
 .card p{
     color:gray;
 }
 
-/* RESPONSIVE */
-
+/* Adaptación del panel para pantallas pequeñas */
 @media(max-width:768px){
 
+/* Barra lateral reducida en dispositivos pequeños */
 .sidebar{
     width:70px;
 }
 
+/* Logo adaptado a pantallas pequeñas */
 .logo{
     font-size:14px;
     padding:20px 5px;
 }
 
+/* Opciones de navegación centradas */
 .sidebar ul li{
     text-align:center;
     padding:18px 10px;
 }
 
+/* Oculta el texto de las opciones en pantallas pequeñas */
 .sidebar ul li span{
     display:none;
 }
 
+/* Ajusta la posición de los iconos */
 .sidebar ul li i{
     margin:0;
 }
 
+/* Reduce el tamaño del título de la barra superior */
 .navbar h2{
     font-size:18px;
 }
-
 }
 
 /* Botón de usuario reutilizable */
@@ -154,6 +169,8 @@ body{
     text-align:center;
     transition:background .15s, transform .08s;
 }
+
+/* Efecto al pasar el cursor sobre el botón de usuario */
 .user-button:hover{
     background:#1d4ed8;
     transform:translateY(-1px);

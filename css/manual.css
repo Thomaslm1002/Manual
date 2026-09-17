@@ -1,4 +1,5 @@
-        root {
+/* Variables globales de colores, sombras y estilos */
+:root {
     --bg: #f4f7fb;
     --surface: #ffffff;
     --surface-muted: #edf3fb;
@@ -11,59 +12,69 @@
     --muted: #5c7188;
     --line: rgba(16, 42, 67, 0.12);
     --shadow: 0 20px 50px rgba(10, 28, 47, 0.12);
-    }
+}
 
-    * {
+/* Configuración general de todos los elementos */
+* {
     box-sizing: border-box;
-    }
+}
 
-    html {
+/* Permite desplazamiento suave entre secciones */
+html {
     scroll-behavior: smooth;
-    }
+}
 
-    body {
+/* Estilos generales del cuerpo de la página */
+body {
     margin: 0;
     font-family: "Inter", sans-serif;
     background: var(--bg);
     color: var(--text);
-    }
+}
 
-    a {
+/* Elimina la decoración predeterminada de los enlaces */
+a {
     text-decoration: none;
-    }
+}
 
-    img {
+/* Ajusta el tamaño de las imágenes */
+img {
     max-width: 100%;
     display: block;
-    }
+}
 
-    button {
+/* Hereda la fuente utilizada por los botones */
+button {
     font: inherit;
-    }
+}
 
-    .container {
+/* Contenedor general que centra el contenido */
+.container {
     width: min(1140px, calc(100% - 2rem));
     margin: 0 auto;
-    }
+}
 
-    .topbar {
+/* Barra superior de navegación fija */
+.topbar {
     position: sticky;
     top: 0;
     z-index: 30;
     backdrop-filter: blur(14px);
     background: rgba(244, 247, 251, 0.82);
     border-bottom: 1px solid var(--line);
-    }
-    /*
-    .nav-wrap {
+}
+
+/* Contenedor interno de la barra de navegación */
+.nav-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
     min-height: 78px;
     gap: 1rem;
-    }
-    /*
-    .brand {
+}
+
+/* Identidad o marca principal del sitio */
+.brand {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
@@ -71,9 +82,10 @@
     color: var(--primary);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    }
+}
 
-    .brand-mark {
+/* Ícono de la marca */
+.brand-mark {
     display: grid;
     place-items: center;
     width: 38px;
@@ -82,31 +94,35 @@
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-soft) 100%);
     color: white;
     font-size: 1.05rem;
-    }
+}
 
-    .main-nav {
+/* Contenedor de los enlaces principales */
+.main-nav {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     flex-wrap: wrap;
-    }
+}
 
-    .main-nav a {
+/* Enlaces de navegación */
+.main-nav a {
     padding: 0.7rem 0.9rem;
     border-radius: 999px;
     color: var(--muted);
     font-size: 0.92rem;
     font-weight: 600;
     transition: 0.2s ease;
-    }
+}
 
-    .main-nav a:hover,
-    .main-nav a.active {
+/* Efecto y estado activo de los enlaces de navegación */
+.main-nav a:hover,
+.main-nav a.active {
     background: var(--primary);
     color: white;
-    }
+}
 
-    .nav-toggle {
+/* Botón utilizado para abrir el menú móvil */
+.nav-toggle {
     display: none;
     width: 48px;
     height: 48px;
@@ -115,9 +131,10 @@
     border-radius: 12px;
     background: white;
     cursor: pointer;
-    }
+}
 
-    .nav-toggle span {
+/* Líneas que forman el botón del menú móvil */
+.nav-toggle span {
     display: block;
     width: 22px;
     height: 2px;
@@ -125,45 +142,52 @@
     border-radius: 2px;
     background: var(--primary);
     transition: 0.3s ease;
-    }
+}
 
-    .nav-toggle.open span:nth-child(1) {
+/* Primera línea transformada cuando el menú está abierto */
+.nav-toggle.open span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
-    }
+}
 
-    .nav-toggle.open span:nth-child(2) {
+/* Oculta la segunda línea cuando el menú está abierto */
+.nav-toggle.open span:nth-child(2) {
     opacity: 0;
-    }
+}
 
-    .nav-toggle.open span:nth-child(3) {
+/* Tercera línea transformada cuando el menú está abierto */
+.nav-toggle.open span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
-    }
-    */
-    .hero {
+}
+
+/* Sección principal de presentación */
+.hero {
     position: relative;
     padding: 5.5rem 0 4rem;
     background: linear-gradient(135deg, #0b1f37 0%, #183a63 40%, #285d8d 100%);
     color: white;
     overflow: hidden;
-    }
+}
 
-    .hero::before {
+/* Efecto decorativo de fondo de la sección principal */
+.hero::before {
     content: "";
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at top right, rgba(111, 208, 195, 0.2), transparent 35%);
-    }
+}
 
-    .hero-grid {
+/* Distribución del contenido principal de la sección hero */
+.hero-grid {
     position: relative;
     z-index: 1;
     display: grid;
     grid-template-columns: 1.4fr 0.8fr;
     gap: 2rem;
     align-items: center;
-    }
+}
 
-    .eyebrow {
+/* Texto pequeño que identifica una sección */
+.eyebrow {
     display: inline-block;
     margin-bottom: 1rem;
     font-size: 0.74rem;
@@ -171,35 +195,40 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--accent);
-    }
+}
 
-    .eyebrow.accent {
+/* Variante de color del texto eyebrow */
+.eyebrow.accent {
     color: var(--primary-soft);
-    }
+}
 
-    .hero-copy h1 {
+/* Título principal de la sección hero */
+.hero-copy h1 {
     margin: 0 0 1rem;
     font-size: clamp(2.5rem, 6vw, 5rem);
     line-height: 0.96;
     letter-spacing: -0.06em;
-    }
+}
 
-    .hero-copy p {
+/* Descripción de la sección hero */
+.hero-copy p {
     max-width: 620px;
     margin: 0;
     font-size: 1.06rem;
     line-height: 1.75;
     color: rgba(255, 255, 255, 0.84);
-    }
+}
 
-    .hero-actions {
+/* Contenedor de los botones principales */
+.hero-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2rem;
-    }
+}
 
-    .btn {
+/* Estilo general de los botones */
+.btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -209,60 +238,69 @@
     border: 1px solid transparent;
     font-weight: 700;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+}
 
-    .btn:hover {
+/* Efecto de movimiento al pasar el cursor sobre los botones */
+.btn:hover {
     transform: translateY(-1px);
-    }
+}
 
-    .btn-primary {
+/* Estilo del botón principal */
+.btn-primary {
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
     color: #06273d;
     box-shadow: 0 15px 30px rgba(45, 169, 160, 0.25);
-    }
+}
 
-    .btn-secondary {
+/* Estilo del botón secundario */
+.btn-secondary {
     background: transparent;
     border-color: rgba(255, 255, 255, 0.28);
     color: white;
-    }
+}
 
-    .hero-list {
+/* Lista de elementos destacados de la sección hero */
+.hero-list {
     display: flex;
     gap: 0.9rem;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
     margin: 2rem 0 0;
-    }
+}
 
-    .hero-list li {
+/* Elementos individuales de la lista hero */
+.hero-list li {
     padding: 0.5rem 0.8rem;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.9);
     font-size: 0.85rem;
     font-weight: 600;
-    }
+}
 
-    .hero-panel {
+/* Contenedor de las tarjetas informativas del hero */
+.hero-panel {
     display: grid;
     gap: 1rem;
-    }
+}
 
-    .stat-card {
+/* Tarjetas que muestran estadísticas o información */
+.stat-card {
     padding: 1.5rem;
     border-radius: 26px;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.14);
     backdrop-filter: blur(8px);
-    }
+}
 
-    .card-strong {
+/* Variante destacada de las tarjetas estadísticas */
+.card-strong {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
-    }
+}
 
-    .stat-card .label {
+/* Etiqueta descriptiva de las tarjetas estadísticas */
+.stat-card .label {
     display: inline-block;
     margin-bottom: 0.8rem;
     font-size: 0.72rem;
@@ -270,61 +308,71 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.7);
-    }
+}
 
-    .stat-card strong {
+/* Número destacado de las tarjetas estadísticas */
+.stat-card strong {
     display: block;
     font-size: clamp(2.5rem, 4vw, 4rem);
     line-height: 1;
     color: var(--amber);
-    }
+}
 
-    .stat-card h3 {
+/* Título de las tarjetas estadísticas */
+.stat-card h3 {
     margin: 0 0 0.5rem;
     font-size: 1.3rem;
-    }
+}
 
-    .stat-card p {
+/* Descripción de las tarjetas estadísticas */
+.stat-card p {
     margin: 0;
     line-height: 1.65;
     color: rgba(255, 255, 255, 0.8);
-    }
+}
 
-    .section {
+/* Espaciado general de las secciones */
+.section {
     padding: 5.2rem 0;
-    }
+}
 
-    .section-head {
+/* Encabezado de cada sección */
+.section-head {
     max-width: 620px;
     margin-bottom: 2rem;
-    }
+}
 
-    .section-head h2 {
+/* Título de las secciones */
+.section-head h2 {
     margin: 0;
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.1;
     letter-spacing: -0.04em;
-    }
+}
 
-    .light h2 {
+/* Títulos blancos dentro de secciones claras */
+.light h2 {
     color: white;
-    }
+}
 
-    .feature-grid {
+/* Distribución de las tarjetas de características */
+.feature-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1.25rem;
-    }
+}
 
-    .feature-card {
+/* Tarjetas que presentan características */
+.feature-card {
     padding: 1.5rem;
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: 24px;
     box-shadow: var(--shadow);
-    }
+}
 
-    .icon {
+/* Íconos utilizados en las tarjetas */
+.icon {
     display: inline-grid;
     place-items: center;
     width: 52px;
@@ -335,37 +383,43 @@
     color: var(--primary);
     font-size: 0.85rem;
     font-weight: 800;
-    }
+}
 
-    .feature-card h3 {
+/* Títulos de las tarjetas de características */
+.feature-card h3 {
     margin: 0 0 0.7rem;
     font-size: 1.2rem;
-    }
+}
 
-    .feature-card p {
+/* Descripción de las tarjetas de características */
+.feature-card p {
     margin: 0;
     color: var(--muted);
     line-height: 1.7;
-    }
+}
 
-    .section-dark {
+/* Sección con fondo oscuro */
+.section-dark {
     background: linear-gradient(135deg, #102a43 0%, #143d63 100%);
-    }
+}
 
-    .rules-grid {
+/* Distribución de las tarjetas de normas */
+.rules-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1.25rem;
-    }
+}
 
-    .rule-card {
+/* Tarjetas individuales de normas */
+.rule-card {
     padding: 1.5rem;
     border-radius: 22px;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    }
+}
 
-    .rule-tag {
+/* Etiqueta numérica de las normas */
+.rule-tag {
     display: inline-grid;
     place-items: center;
     width: 40px;
@@ -375,75 +429,87 @@
     background: rgba(111, 208, 195, 0.16);
     color: var(--accent);
     font-weight: 800;
-    }
+}
 
-    .rule-card h3 {
+/* Títulos de las tarjetas de normas */
+.rule-card h3 {
     margin: 0 0 0.65rem;
     color: white;
     font-size: 1.2rem;
-    }
+}
 
-    .rule-card p {
+/* Descripciones de las tarjetas de normas */
+.rule-card p {
     margin: 0;
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
-    }
+}
 
-    .info-grid {
+/* Distribución de los paneles informativos */
+.info-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
-    }
+}
 
-    .info-panel {
+/* Paneles de información */
+.info-panel {
     padding: 1.8rem;
     background: var(--surface);
     border-radius: 24px;
     border: 1px solid var(--line);
     box-shadow: var(--shadow);
-    }
+}
 
-    .info-panel.alt {
+/* Variante alternativa de los paneles informativos */
+.info-panel.alt {
     background: linear-gradient(180deg, rgba(111, 208, 195, 0.12), rgba(255, 255, 255, 0.9));
-    }
+}
 
-    .info-panel h3 {
+/* Títulos de los paneles informativos */
+.info-panel h3 {
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: 1.5rem;
-    }
+}
 
-    .info-panel ul {
+/* Listas dentro de los paneles informativos */
+.info-panel ul {
     margin: 0;
     padding-left: 1.2rem;
     color: var(--muted);
     line-height: 1.85;
-    }
+}
 
-    .info-panel li + li {
+/* Espaciado entre elementos consecutivos de la lista */
+.info-panel li + li {
     margin-top: 0.55rem;
-    }
+}
 
-    .section-soft {
+/* Fondo suave para determinadas secciones */
+.section-soft {
     background: #edf3fb;
-    }
+}
 
-    .timeline {
+/* Contenedor de la línea de tiempo */
+.timeline {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1rem;
-    }
+}
 
-    .timeline-step {
+/* Paso individual de la línea de tiempo */
+.timeline-step {
     position: relative;
     padding: 1.5rem;
     border-radius: 22px;
     background: var(--surface);
     border: 1px solid var(--line);
     box-shadow: var(--shadow);
-    }
+}
 
-    .timeline-step:not(:last-child)::after {
+/* Línea que conecta los pasos de la línea de tiempo */
+.timeline-step:not(:last-child)::after {
     content: "";
     position: absolute;
     top: 1.7rem;
@@ -451,9 +517,10 @@
     width: 1.2rem;
     height: 2px;
     background: rgba(16, 42, 67, 0.2);
-    }
+}
 
-    .timeline-step span {
+/* Número de cada paso de la línea de tiempo */
+.timeline-step span {
     display: inline-grid;
     place-items: center;
     width: 42px;
@@ -463,50 +530,58 @@
     background: linear-gradient(135deg, rgba(16, 42, 67, 0.08), rgba(111, 208, 195, 0.2));
     color: var(--primary);
     font-weight: 800;
-    }
+}
 
-    .timeline-step h3 {
+/* Títulos de los pasos de la línea de tiempo */
+.timeline-step h3 {
     margin: 0 0 0.7rem;
     font-size: 1.2rem;
-    }
+}
 
-    .timeline-step p {
+/* Descripción de los pasos de la línea de tiempo */
+.timeline-step p {
     margin: 0;
     color: var(--muted);
     line-height: 1.7;
-    }
+}
 
-    .faq-wrap {
+/* Contenedor general de la sección de preguntas frecuentes */
+.faq-wrap {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     gap: 1.5rem;
     align-items: start;
-    }
+}
 
-    .faq-intro {
+/* Introducción de la sección de preguntas frecuentes */
+.faq-intro {
     padding-right: 1rem;
-    }
+}
 
-    .faq-intro h2 {
+/* Título de la sección de preguntas frecuentes */
+.faq-intro h2 {
     margin: 0;
     font-size: clamp(2rem, 4vw, 2.8rem);
     line-height: 1.1;
     letter-spacing: -0.04em;
-    }
+}
 
-    .faq-list {
+/* Lista de preguntas frecuentes */
+.faq-list {
     display: grid;
     gap: 0.9rem;
-    }
+}
 
-    .faq-item {
+/* Elemento individual de preguntas frecuentes */
+.faq-item {
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: 20px;
     overflow: hidden;
-    }
+}
 
-    .faq-question {
+/* Botón que contiene cada pregunta */
+.faq-question {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -518,38 +593,45 @@
     font-weight: 700;
     text-align: left;
     cursor: pointer;
-    }
+}
 
-    .faq-question::after {
+/* Signo que aparece al final de cada pregunta */
+.faq-question::after {
     content: "+";
     font-size: 1.5rem;
     color: var(--primary-soft);
-    }
+}
 
-    .faq-item.open .faq-question::after {
+/* Signo que aparece cuando una pregunta está abierta */
+.faq-item.open .faq-question::after {
     content: "−";
-    }
+}
 
-    .faq-answer {
+/* Respuesta oculta de cada pregunta */
+.faq-answer {
     display: none;
     padding: 0 1.3rem 1.2rem;
-    }
+}
 
-    .faq-item.open .faq-answer {
+/* Muestra la respuesta cuando la pregunta está abierta */
+.faq-item.open .faq-answer {
     display: block;
-    }
+}
 
-    .faq-answer p {
+/* Texto de las respuestas */
+.faq-answer p {
     margin: 0;
     color: var(--muted);
     line-height: 1.75;
-    }
+}
 
-    .cta-section {
+/* Espaciado de la sección de llamada a la acción */
+.cta-section {
     padding: 0 0 4.5rem;
-    }
+}
 
-    .cta-box {
+/* Contenedor principal de la llamada a la acción */
+.cta-box {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -559,51 +641,61 @@
     background: linear-gradient(135deg, #102a43 0%, #1d4e89 100%);
     color: white;
     box-shadow: var(--shadow);
-    }
+}
 
-    .cta-box h2 {
+/* Título de la llamada a la acción */
+.cta-box h2 {
     margin: 0;
     font-size: clamp(2rem, 4vw, 2.8rem);
     letter-spacing: -0.04em;
-    }
+}
 
-    .site-footer {
+/* Pie de página del sitio */
+.site-footer {
     border-top: 1px solid var(--line);
     background: #edf3fb;
-    }
+}
 
-    .footer-wrap {
+/* Contenedor del contenido del pie de página */
+.footer-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
     min-height: 80px;
     color: var(--muted);
-    }
+}
 
-    .footer-wrap span {
+/* Nombre o marca dentro del pie de página */
+.footer-wrap span {
     font-weight: 800;
     letter-spacing: 0.08em;
     color: var(--primary);
     text-transform: uppercase;
-    }
+}
 
-    .footer-wrap p {
+/* Texto del pie de página */
+.footer-wrap p {
     margin: 0;
-    }
+}
 
-    @media (max-width: 980px) {
+/* Adaptación del diseño para pantallas medianas */
+@media (max-width: 980px) {
+
+    /* Reduce las columnas de las cuadrículas */
     .feature-grid,
     .rules-grid,
     .timeline {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    /* Organiza en una sola columna el hero y las preguntas frecuentes */
     .hero-grid,
     .faq-wrap {
         grid-template-columns: 1fr;
     }
-    /*
+
+    /* Menú de navegación desplegable para dispositivos medianos */
     .main-nav {
         position: absolute;
         top: calc(100% + 0.5rem);
@@ -619,16 +711,21 @@
         align-items: flex-start;
     }
 
+    /* Muestra el menú cuando se encuentra abierto */
     .main-nav.open {
         display: flex;
     }
 
+    /* Muestra el botón del menú en pantallas pequeñas */
     .nav-toggle {
         display: block;
     }
-    }
-    */
-    @media (max-width: 680px) {
+}
+
+/* Adaptación del diseño para dispositivos móviles */
+@media (max-width: 680px) {
+
+    /* Coloca las cuadrículas en una sola columna */
     .feature-grid,
     .rules-grid,
     .info-grid,
@@ -636,14 +733,17 @@
         grid-template-columns: 1fr;
     }
 
+    /* Reduce el espacio superior de la sección hero */
     .hero {
         padding-top: 4rem;
     }
 
+    /* Ajusta el tamaño del título principal en móviles */
     .hero-copy h1 {
         font-size: clamp(2.4rem, 12vw, 4rem);
     }
 
+    /* Organiza verticalmente los botones, CTA y pie de página */
     .hero-actions,
     .cta-box,
     .footer-wrap {
@@ -651,21 +751,25 @@
         align-items: flex-start;
     }
 
+    /* Reduce el espacio interno de la caja CTA */
     .cta-box {
         padding: 1.5rem;
     }
-    }
-    
-    .calendar-section {
+}
+
+/* Sección que contiene el calendario */
+.calendar-section {
     padding: 80px 6%;
     background: #f5f7fa;
 }
 
+/* Encabezado de la sección del calendario */
 .calendar-header {
     text-align: center;
     margin-bottom: 40px;
 }
 
+/* Contenedor visual del calendario */
 .calendar-container {
     max-width: 1200px;
     margin: auto;
@@ -676,10 +780,10 @@
     overflow: hidden;
 }
 
+/* Iframe utilizado para mostrar el calendario */
 .calendar-container iframe {
     display: block;
     width: 100%;
     min-height: 600px;
     border: 0;
 }
-    }
