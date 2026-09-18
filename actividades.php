@@ -1,6 +1,6 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+  session_start();
 }
 ?>
 
@@ -74,10 +74,10 @@ if (session_status() === PHP_SESSION_NONE) {
 </nav>
 
 <nav>
-</ul>
-        <button id="hamburger" class="hamburger" aria-label="Abrir menú" onclick="toggleMenu()">
-          <span></span><span></span><span></span>
-        </button>
+  </ul>
+      <button id="hamburger" class="hamburger" aria-label="Abrir menú" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
       </div>
       <div id="mobile-menu" class="mobile-menu">
         <a href="#hero" onclick="closeMobileMenu()">Inicio</a>
@@ -93,8 +93,8 @@ if (session_status() === PHP_SESSION_NONE) {
   <section id="actividades">
     <div class="carousel-header reveal">
       <div class="section-label">Actividades</div>
-      <h2 class="section-title" style="color:white;">Hacemos que las<br>cosas sucedan</h2>
-      <p class="section-sub">Desde ferias académicas hasta marchas por los derechos estudiantiles. Cada acción cuenta.</p>
+        <h2 class="section-title" style="color:white;">Hacemos que las<br>cosas sucedan</h2>
+        <p class="section-sub">Desde ferias académicas hasta marchas por los derechos estudiantiles. Cada acción cuenta.</p>
     </div>
 
     <div class="carousel-track-wrapper">

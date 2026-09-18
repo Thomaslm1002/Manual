@@ -5,6 +5,7 @@ $sql = "SELECT * FROM contacto";
 // Ejecutar la consulta y almacenar el resultado en la variable $resultado
 $resultado = mysqli_query($conexion, $sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -50,9 +51,7 @@ $resultado = mysqli_query($conexion, $sql);
             <a class="btn editar" href="PHP/editar_contacto.php?id=<?php echo $fila['id']; ?>">
                 Editar
             </a>
-            <a class="btn eliminar"
-            onclick="return confirm('¿Eliminar contacto?')"
-            href="PHP/eliminar.contacto.php?id=<?php echo $fila['id']; ?>">
+            <a class="btn eliminar" onclick="return confirm('¿Eliminar contacto?')" href="PHP/eliminar.contacto.php?id=<?php echo $fila['id']; ?>">
             Eliminar
             </a>
         </td>

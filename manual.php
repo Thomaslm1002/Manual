@@ -142,22 +142,22 @@ session_start();
 
       <div class="feature-grid">
         <article class="feature-card">
-          <div class="icon">01</div>
+          <div class="icon">1</div>
           <h3>Respeto</h3>
           <p>Reconocer la dignidad de cada persona y valorar las diferencias sin exclusión ni violencia.</p>
         </article>
         <article class="feature-card">
-          <div class="icon">02</div>
+          <div class="icon">2</div>
           <h3>Responsabilidad</h3>
           <p>Actuar con honestidad, cumplimiento y cuidado de los espacios, tiempos y relaciones.</p>
         </article>
         <article class="feature-card">
-          <div class="icon">03</div>
+          <div class="icon">3</div>
           <h3>Participación</h3>
           <p>Expresar ideas, escuchar, aportar y decidir de forma responsable dentro de la comunidad.</p>
         </article>
         <article class="feature-card">
-          <div class="icon">04</div>
+          <div class="icon">4</div>
           <h3>Inclusión</h3>
           <p>Promover condiciones de igualdad para que todas las personas puedan pertenecer y crecer.</p>
         </article>
