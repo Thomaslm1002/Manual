@@ -1,26 +1,27 @@
 <?php
-//
+// Inicia o reanuda la sesión del usuario
 session_start();
-//
+// Incluye el archivo de conexión a la base de datos
 include 'conexion.php';
-
-//
+// Verifica si la petición HTTP es de tipo POST (formulario de login enviado)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //
+    // Obtiene el correo enviado desde el formulario
     $correo = $_POST['correo'];
-    //
+    // Obtiene la contraseña enviada desde el formulario
     $clave = $_POST['Clave'];
-    //
+    // Define la consulta SQL para buscar al usuario por su correo
     $sql = "SELECT * FROM registrar WHERE correo = ?";
-    //
+    // Prepara la consulta SQL para evitar inyección SQL
     $stmt = mysqli_prepare($conexion, $sql);
-    //
+    // Vincula el parámetro correo (tipo string) a la consulta preparada
     mysqli_stmt_bind_param($stmt, "s", $correo);
-    //
+    // Ejecuta la consulta preparada
     mysqli_stmt_execute($stmt);
-    //
+    // Obtiene el resultado de la consulta ejecutada
     $resultado = mysqli_stmt_get_result($stmt);
+    // Comprueba si se encontró algún registro con ese correo
     if (mysqli_num_rows($resultado) > 0) {
+        // Obtiene la fila de resultados como un arreglo asociativo
         $fila = mysqli_fetch_assoc($resultado);
         // Comprobar contraseña
         if (password_verify($clave, $fila['Clave'])) {
@@ -29,23 +30,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['usuario'] = $fila['Nombre'];
             $_SESSION['correo'] = $fila['correo'];
             $_SESSION['tipo'] = $fila['TipoCuenta'];
-            // Redireccionar
+            // Redireccionar al apartado de Administrador
             if ($fila['TipoCuenta'] === 'administrador') {
                 header("Location: dashboard.php");
                 exit();
             } else {
+                // Redireccionar al apartado de Usuario(Index)
                 header("Location: index.php");
                 exit();
             }
-
             } else {
+                // Si la contraseña no coincide con el hash almacenado, muestra un mensaje de error
                 echo "Contraseña incorrecta.";
         }
-
     } else {
+        // Si no se encontró ningún registro con ese correo, muestra un mensaje de error
         echo "Usuario no encontrado.";
     }
+    // Cierra la sentencia preparada
     mysqli_stmt_close($stmt);
+    // Cierra la conexión a la base de datos
     mysqli_close($conexion);
 }
 ?>
