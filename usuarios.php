@@ -38,7 +38,6 @@ $resultado = mysqli_query($conexion, $sql);
     <th>Acciones</th>
 </tr>
 
-//
 <?php while($fila=mysqli_fetch_assoc($resultado)){ ?>
 
 <tr>
