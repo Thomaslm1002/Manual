@@ -53,44 +53,33 @@ $totalSugerencias = mysqli_fetch_assoc($resultadoSugerencias)['total'];
         </div>
 
         <div class="content">
-
             <h1>¡Bienvenido!</h1>
             <p>Panel de administración de ManualitOnline.</p>
-
             <div class="cards">
-
                 <div class="card">
                     <i class="fas fa-users"></i>
                     <h2><?php echo $totalUsuarios; ?></h2>
                     <p>Usuarios</p>
                 </div>
-
                 <div class="card">
                     <i class="fas fa-book"></i>
                     <h2>1</h2>
                     <p>Manual</p>
                 </div>
-
                 <div class="card">
                     <i class="fas fa-newspaper"></i>
                     <h2>12</h2>
                     <p>Noticias</p>
                 </div>
-
                 <div class="card">
                     <i class="fas fa-comments"></i>
                     <h2><?php echo $totalSugerencias; ?></h2>
                     <p>Sugerencias</p>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </div>
-<script src="JS/dashboard.js"></script>
-
+    <script src="JS/dashboard.js"></script>
 </body>
 </html>

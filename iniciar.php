@@ -1,27 +1,29 @@
 <?php
+//
 session_start();
-
+//
 include 'conexion.php';
 
+//
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    //
     $correo = $_POST['correo'];
+    //
     $clave = $_POST['Clave'];
-
+    //
     $sql = "SELECT * FROM registrar WHERE correo = ?";
+    //
     $stmt = mysqli_prepare($conexion, $sql);
-
+    //
     mysqli_stmt_bind_param($stmt, "s", $correo);
+    //
     mysqli_stmt_execute($stmt);
-
+    //
     $resultado = mysqli_stmt_get_result($stmt);
-
     if (mysqli_num_rows($resultado) > 0) {
-
         $fila = mysqli_fetch_assoc($resultado);
         // Comprobar contraseña
         if (password_verify($clave, $fila['Clave'])) {
-
             // Crear sesión
             $_SESSION['id'] = $fila['id'];
             $_SESSION['usuario'] = $fila['Nombre'];
@@ -37,21 +39,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             } else {
-
                 echo "Contraseña incorrecta.";
-
         }
 
     } else {
-
         echo "Usuario no encontrado.";
-
     }
-
     mysqli_stmt_close($stmt);
     mysqli_close($conexion);
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -67,32 +63,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 <div class="login-container">
-
     <h1><span>COES</span>CON</h1>
-    <p class="login-subtitle">Consejo Estudiantil Universitario</p>
-
+    <p class="login-subtitle">Consejo Escolar Convivencia</p>
     <form id="loginForm" method="POST" action="Iniciar.php">
-
         <div class="form-group">
-            <label for="email">CORREO INSTITUCIONAL</label>
-            <input
-                type="email"
-                id="email"
-                name="correo"
-                placeholder="usuario@universidad.edu"
-                required>
+            <label for="email">CORREO ELECTRONICO</label>
+            <input type="email" id="email" name="correo" placeholder="tunombre@gmail.com" required>
         </div>
-
         <div class="form-group password">
             <label for="password">CONTRASEÑA</label>
-
-            <input
-                type="password"
-                id="password"
-                name="Clave"
-                placeholder="••••••••"
-                required>
-
+            <input type="password" id="password" name="Clave" placeholder="••••••••" required>
             <button type="button" class="show-password" onclick="togglePassword()">
                 👁
             </button>
@@ -101,13 +81,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="checkbox" id="remember">
             <label for="remember">Recordar sesión</label>
         </div>
-
         <button type="submit" class="btn">
-            Ingresar al Portal →
+            Ingresar a ManualitOnline →
         </button>
-
     </form>
-
     <div class="divider">
         <span>¿NO TIENES CUENTA?</span>
     </div>
